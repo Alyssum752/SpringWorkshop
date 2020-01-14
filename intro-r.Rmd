@@ -373,6 +373,15 @@ Now, with your partner, play with mutate and piping and create a plot of interes
 ```{r plot-of-something-interesting}
 # type your code for the Exercise here, and Knit
 
+ggplot(data = diamonds, aes(x = depth, y = price)) +
+  geom_point(color = "green")
+
+the_diamond <- diamonds %>%
+  filter(cut == "Ideal" & table >= 53 & table <= 58 & depth >= 59 && depth <= 62)
+
+
+ggplot(data = the_diamond, aes(x = carat, y = price)) +
+  geom_point(color = "blue")
 
 
 ```
